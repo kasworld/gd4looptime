@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://hx2s51m41svj"]
+
+[ext_resource type="Script" uid="uid://blo01pcx28xyr" path="res://main.gd" id="1_10fpl"]
+
+[sub_resource type="Theme" id="Theme_25ufu"]
+default_font_size = 64
+
+[node name="Main" type="VBoxContainer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_25ufu")
+script = ExtResource("1_10fpl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Loop Count"
+
+[node name="LoopCount" type="TextEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "100000000"
+
+[node name="StartLoop" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Start Loop"
+
+[node name="LoopResult" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Result"
+
+[connection signal="pressed" from="StartLoop" to="." method="_on_start_loop_pressed"]
