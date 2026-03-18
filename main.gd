@@ -1,46 +1,50 @@
 extends VBoxContainer
 
 func _on_start_loop_pressed() -> void:
-	var timed := BenchHelper.new($HBoxContainer/LoopCount.text)
-	for i :int in timed.count :
+	var count := int($HBoxContainer/LoopCount.text)
+	var timed := BenchHelper.new()
+	for i :int in count :
 		pass
-	timed.end()
-	$LoopResult.text = timed.get_result()
+	timed.end(count)
+	$LoopResult.text = timed.to_string()
 
 
 func _on_start_alloc_pressed() -> void:
-	var timed := BenchHelper.new($HBoxContainer/LoopCount.text)
+	var count := int($HBoxContainer/LoopCount.text)
+	var timed := BenchHelper.new()
 	var ar :PackedByteArray = []
-	var err := ar.resize(timed.count)
+	var err := ar.resize(count)
 	if err != OK:
 		$LoopResult.text = "fail resize %d" % err
 		return
-	timed.end()
-	$LoopResult.text = timed.get_result()
+	timed.end(count)
+	$LoopResult.text = timed.to_string()
 
 func _on_start_permutation_pressed() -> void:
-	var timed := BenchHelper.new(10)
+	var timed := BenchHelper.new()
+	var permut_size := 10
 	var ar := []
-	var err := ar.resize(timed.count)
+	var err := ar.resize(permut_size)
 	if err != OK:
 		$LoopResult.text = "fail resize %d" % err
 		return
-	for i :int in timed.count :
+	for i :int in permut_size :
 		ar[i] = i
 	var per_ar := Permutation.Array(ar)
 	timed.end(per_ar.size())
-	$LoopResult.text = timed.get_result()
+	$LoopResult.text = timed.to_string()
 
 func _on_start_permut_byte_pressed() -> void:
-	var timed := BenchHelper.new(10)
+	var timed := BenchHelper.new()
+	var permut_size := 10
 	var ar :PackedByteArray = []
-	var err := ar.resize(timed.count)
+	var err := ar.resize(permut_size)
 	if err != OK:
 		$LoopResult.text = "fail resize %d" % err
 		return
-	for i :int in timed.count :
+	for i :int in permut_size :
 		ar[i] = i
 	var per_ar := Permutation.ArrayPackedByte(ar)
 	timed.end(per_ar.size())
-	$LoopResult.text = timed.get_result()
+	$LoopResult.text = timed.to_string()
 	#print_debug(per_ar)

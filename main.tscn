@@ -20,7 +20,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Loop Count"
+text = "Count"
 
 [node name="LoopCount" type="TextEdit" parent="HBoxContainer" unique_id=1829264100]
 layout_mode = 2
@@ -33,19 +33,19 @@ layout_mode = 2
 [node name="StartLoop" type="Button" parent="HBoxContainer2" unique_id=310417586]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Start Loop"
+text = "loop"
 
 [node name="StartAlloc" type="Button" parent="HBoxContainer2" unique_id=532107499]
 layout_mode = 2
-text = "Start alloc"
+text = "alloc"
 
 [node name="StartPermutation" type="Button" parent="HBoxContainer2" unique_id=112454389]
 layout_mode = 2
-text = "Start permutation"
+text = "permutate"
 
 [node name="StartPermutByte" type="Button" parent="HBoxContainer2" unique_id=1634715425]
 layout_mode = 2
-text = "Start permutation byte"
+text = "permutate packedbyte"
 
 [node name="LoopResult" type="Label" parent="." unique_id=665211952]
 layout_mode = 2
