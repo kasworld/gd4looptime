@@ -39,10 +39,10 @@ static func permutate_array_pbyte(array :PackedByteArray) -> Array:
 
 static func _permutate_array_pbyte_helper(array :PackedByteArray, start_index :int, output :Array) -> void:
 	if start_index == array.size():
-		output.append(array)
+		output.append(array.duplicate())
 		return
 	for i :int in range(start_index, array.size()):
-		var tmp = array[start_index]
+		var tmp := array[start_index]
 		array[start_index] = array[i]
 		array[i] = tmp
 		_permutate_array_pbyte_helper(array, start_index + 1, output)
@@ -94,3 +94,4 @@ func _on_start_permut_byte_pressed() -> void:
 	var per_ar := permutate_array_pbyte(ar)
 	timed.end(per_ar.size())
 	$LoopResult.text = timed.get_result()
+	#print_debug(per_ar)
