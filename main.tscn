@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://hx2s51m41svj"]
+[gd_scene format=3 uid="uid://hx2s51m41svj"]
 
 [ext_resource type="Script" uid="uid://blo01pcx28xyr" path="res://main.gd" id="1_10fpl"]
 
 [sub_resource type="Theme" id="Theme_25ufu"]
 default_font_size = 64
 
-[node name="Main" type="VBoxContainer"]
+[node name="Main" type="VBoxContainer" unique_id=330516984]
 offset_right = 1920.0
 offset_bottom = 1080.0
 size_flags_horizontal = 3
@@ -13,29 +13,42 @@ size_flags_vertical = 3
 theme = SubResource("Theme_25ufu")
 script = ExtResource("1_10fpl")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1536053891]
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=167598876]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Loop Count"
 
-[node name="LoopCount" type="TextEdit" parent="HBoxContainer"]
+[node name="LoopCount" type="TextEdit" parent="HBoxContainer" unique_id=1829264100]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "100000000"
 
-[node name="StartLoop" type="Button" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1467585190]
+layout_mode = 2
+
+[node name="StartLoop" type="Button" parent="HBoxContainer2" unique_id=310417586]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Start Loop"
 
-[node name="LoopResult" type="Label" parent="."]
+[node name="StartAlloc" type="Button" parent="HBoxContainer2" unique_id=532107499]
+layout_mode = 2
+text = "Start alloc"
+
+[node name="StartPermutation" type="Button" parent="HBoxContainer2" unique_id=112454389]
+layout_mode = 2
+text = "Start permutation"
+
+[node name="LoopResult" type="Label" parent="." unique_id=665211952]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Result"
+autowrap_mode = 3
 
-[connection signal="pressed" from="StartLoop" to="." method="_on_start_loop_pressed"]
+[connection signal="pressed" from="HBoxContainer2/StartLoop" to="." method="_on_start_loop_pressed"]
+[connection signal="pressed" from="HBoxContainer2/StartAlloc" to="." method="_on_start_alloc_pressed"]
+[connection signal="pressed" from="HBoxContainer2/StartPermutation" to="." method="_on_start_permutation_pressed"]
