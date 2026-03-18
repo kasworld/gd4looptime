@@ -43,6 +43,10 @@ text = "Start alloc"
 layout_mode = 2
 text = "Start permutation"
 
+[node name="StartPermutByte" type="Button" parent="HBoxContainer2" unique_id=1634715425]
+layout_mode = 2
+text = "Start permutation byte"
+
 [node name="LoopResult" type="Label" parent="." unique_id=665211952]
 layout_mode = 2
 size_flags_vertical = 3
@@ -52,3 +56,4 @@ autowrap_mode = 3
 [connection signal="pressed" from="HBoxContainer2/StartLoop" to="." method="_on_start_loop_pressed"]
 [connection signal="pressed" from="HBoxContainer2/StartAlloc" to="." method="_on_start_alloc_pressed"]
 [connection signal="pressed" from="HBoxContainer2/StartPermutation" to="." method="_on_start_permutation_pressed"]
+[connection signal="pressed" from="HBoxContainer2/StartPermutByte" to="." method="_on_start_permut_byte_pressed"]
