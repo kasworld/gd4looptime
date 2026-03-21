@@ -20,7 +20,7 @@ func _on_start_alloc_pressed() -> void:
 	timed.end(count)
 	$LoopResult.text = timed.to_string()
 
-func _on_start_permutation_pressed() -> void:
+func _on_permut_slow_recurs_pressed() -> void:
 	var timed := BenchHelper.new()
 	var permut_size := 10
 	var ar := []
@@ -30,12 +30,12 @@ func _on_start_permutation_pressed() -> void:
 		return
 	for i :int in permut_size :
 		ar[i] = i
-	var per_ar := Permutation.Array(ar)
+	var per_ar := Permutation.SlowRecursive(ar)
 	timed.end(per_ar.size())
 	$LoopResult.text = timed.to_string()
 	#print_debug(per_ar)
 
-func _on_start_permut_byte_pressed() -> void:
+func _on_permut_slow_recurs_p_byte_pressed() -> void:
 	var timed := BenchHelper.new()
 	var permut_size := 10
 	var ar :PackedByteArray = []
@@ -45,13 +45,13 @@ func _on_start_permut_byte_pressed() -> void:
 		return
 	for i :int in permut_size :
 		ar[i] = i
-	var per_ar := Permutation.ArrayPackedByte(ar)
+	var per_ar := Permutation.SlowRecursivePackedByte(ar)
 	timed.end(per_ar.size())
 	$LoopResult.text = timed.to_string()
 	#print_debug(per_ar)
 
 
-func _on_permutate_heap_pressed() -> void:
+func _on_permutate_heap_recurs_pressed() -> void:
 	var timed := BenchHelper.new()
 	var permut_size := 10
 	var ar := []

@@ -39,21 +39,21 @@ text = "loop"
 layout_mode = 2
 text = "alloc"
 
-[node name="StartPermutation" type="Button" parent="HBoxContainer2" unique_id=112454389]
+[node name="PermutSlowRecurs" type="Button" parent="HBoxContainer2" unique_id=112454389]
 layout_mode = 2
-text = "permutate"
+text = "permut slow recurs"
 
-[node name="StartPermutByte" type="Button" parent="HBoxContainer2" unique_id=1634715425]
+[node name="PermutSlowRecursPByte" type="Button" parent="HBoxContainer2" unique_id=1634715425]
 layout_mode = 2
-text = "permutate packedbyte"
+text = "permut slow recurs pbyte"
 
-[node name="PermutateHeap" type="Button" parent="HBoxContainer2" unique_id=983251158]
+[node name="PermutateHeapRecurs" type="Button" parent="HBoxContainer2" unique_id=983251158]
 layout_mode = 2
-text = "Heap recursive"
+text = "permute heap recursive"
 
 [node name="PermutateHeapLoop" type="Button" parent="HBoxContainer2" unique_id=335260645]
 layout_mode = 2
-text = "permutate heap loop"
+text = "permut heap loop"
 
 [node name="LoopResult" type="Label" parent="." unique_id=665211952]
 layout_mode = 2
@@ -63,7 +63,7 @@ autowrap_mode = 3
 
 [connection signal="pressed" from="HBoxContainer2/StartLoop" to="." method="_on_start_loop_pressed"]
 [connection signal="pressed" from="HBoxContainer2/StartAlloc" to="." method="_on_start_alloc_pressed"]
-[connection signal="pressed" from="HBoxContainer2/StartPermutation" to="." method="_on_start_permutation_pressed"]
-[connection signal="pressed" from="HBoxContainer2/StartPermutByte" to="." method="_on_start_permut_byte_pressed"]
-[connection signal="pressed" from="HBoxContainer2/PermutateHeap" to="." method="_on_permutate_heap_pressed"]
+[connection signal="pressed" from="HBoxContainer2/PermutSlowRecurs" to="." method="_on_permut_slow_recurs_pressed"]
+[connection signal="pressed" from="HBoxContainer2/PermutSlowRecursPByte" to="." method="_on_permut_slow_recurs_p_byte_pressed"]
+[connection signal="pressed" from="HBoxContainer2/PermutateHeapRecurs" to="." method="_on_permutate_heap_recurs_pressed"]
 [connection signal="pressed" from="HBoxContainer2/PermutateHeapLoop" to="." method="_on_permutate_heap_loop_pressed"]

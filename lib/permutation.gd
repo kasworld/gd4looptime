@@ -25,13 +25,13 @@ static func Unrank(src_array :Array, rank: int) -> Array:
 
 
 # Main function to get all permutations as an array of arrays
-static func Array(array :Array) -> Array:
+static func SlowRecursive(array :Array) -> Array:
 	var output :Array = []
-	_array_helper(array, 0, output)
+	_slow_recursive_helper(array, 0, output)
 	return output
 
 # Recursive helper function
-static func _array_helper(array :Array, start_index :int, output :Array) -> void:
+static func _slow_recursive_helper(array :Array, start_index :int, output :Array) -> void:
 	if start_index == array.size():
 		# Base case: a complete permutation is found, add it to the output
 		# Use .duplicate(true) to ensure a deep copy if elements are complex objects/arrays
@@ -45,18 +45,18 @@ static func _array_helper(array :Array, start_index :int, output :Array) -> void
 		array[i] = tmp
 
 		# Recurse for the next index
-		_array_helper(array, start_index + 1, output)
+		_slow_recursive_helper(array, start_index + 1, output)
 
 		# Backtrack: swap them back to restore the original array state for the next iteration
 		array[i] = array[start_index]
 		array[start_index] = tmp
 
-static func ArrayPackedByte(array :PackedByteArray) -> Array:
+static func SlowRecursivePackedByte(array :PackedByteArray) -> Array:
 	var output :Array = []
-	_array_pbyte_helper(array, 0, output)
+	_slow_recursive_pbyte_helper(array, 0, output)
 	return output
 
-static func _array_pbyte_helper(array :PackedByteArray, start_index :int, output :Array) -> void:
+static func _slow_recursive_pbyte_helper(array :PackedByteArray, start_index :int, output :Array) -> void:
 	if start_index == array.size():
 		output.append(array.duplicate())
 		return
@@ -64,7 +64,7 @@ static func _array_pbyte_helper(array :PackedByteArray, start_index :int, output
 		var tmp := array[start_index]
 		array[start_index] = array[i]
 		array[i] = tmp
-		_array_pbyte_helper(array, start_index + 1, output)
+		_slow_recursive_pbyte_helper(array, start_index + 1, output)
 		array[i] = array[start_index]
 		array[start_index] = tmp
 
