@@ -27,7 +27,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "100000000"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1467585190]
+[node name="HBoxContainer2" type="HFlowContainer" parent="." unique_id=1159148292]
 layout_mode = 2
 
 [node name="StartLoop" type="Button" parent="HBoxContainer2" unique_id=310417586]
@@ -47,6 +47,14 @@ text = "permutate"
 layout_mode = 2
 text = "permutate packedbyte"
 
+[node name="PermutateHeap" type="Button" parent="HBoxContainer2" unique_id=983251158]
+layout_mode = 2
+text = "Heap recursive"
+
+[node name="PermutateHeapLoop" type="Button" parent="HBoxContainer2" unique_id=335260645]
+layout_mode = 2
+text = "permutate heap loop"
+
 [node name="LoopResult" type="Label" parent="." unique_id=665211952]
 layout_mode = 2
 size_flags_vertical = 3
@@ -57,3 +65,5 @@ autowrap_mode = 3
 [connection signal="pressed" from="HBoxContainer2/StartAlloc" to="." method="_on_start_alloc_pressed"]
 [connection signal="pressed" from="HBoxContainer2/StartPermutation" to="." method="_on_start_permutation_pressed"]
 [connection signal="pressed" from="HBoxContainer2/StartPermutByte" to="." method="_on_start_permut_byte_pressed"]
+[connection signal="pressed" from="HBoxContainer2/PermutateHeap" to="." method="_on_permutate_heap_pressed"]
+[connection signal="pressed" from="HBoxContainer2/PermutateHeapLoop" to="." method="_on_permutate_heap_loop_pressed"]
