@@ -81,3 +81,19 @@ func _on_permutate_heap_loop_pressed() -> void:
 	timed.end(per_ar.size())
 	$LoopResult.text = timed.to_string()
 	#print_debug(per_ar)
+
+
+func _on_permutate_heap_loop_p_byte_pressed() -> void:
+	var timed := BenchHelper.new()
+	var permut_size := 10
+	var ar :PackedByteArray= []
+	var err := ar.resize(permut_size)
+	if err != OK:
+		$LoopResult.text = "fail resize %d" % err
+		return
+	for i :int in permut_size :
+		ar[i] = i
+	var per_ar := Permutation.HeapLoopPByte(ar)
+	timed.end(per_ar.size())
+	$LoopResult.text = timed.to_string()
+	#print_debug(per_ar)

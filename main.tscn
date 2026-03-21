@@ -55,6 +55,10 @@ text = "permute heap recursive"
 layout_mode = 2
 text = "permut heap loop"
 
+[node name="PermutateHeapLoopPByte" type="Button" parent="HBoxContainer2" unique_id=1203961755]
+layout_mode = 2
+text = "permut heap loop pbyte"
+
 [node name="LoopResult" type="Label" parent="." unique_id=665211952]
 layout_mode = 2
 size_flags_vertical = 3
@@ -67,3 +71,4 @@ autowrap_mode = 3
 [connection signal="pressed" from="HBoxContainer2/PermutSlowRecursPByte" to="." method="_on_permut_slow_recurs_p_byte_pressed"]
 [connection signal="pressed" from="HBoxContainer2/PermutateHeapRecurs" to="." method="_on_permutate_heap_recurs_pressed"]
 [connection signal="pressed" from="HBoxContainer2/PermutateHeapLoop" to="." method="_on_permutate_heap_loop_pressed"]
+[connection signal="pressed" from="HBoxContainer2/PermutateHeapLoopPByte" to="." method="_on_permutate_heap_loop_p_byte_pressed"]
