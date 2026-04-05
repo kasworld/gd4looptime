@@ -62,7 +62,7 @@ text = "permut heap loop pbyte"
 [node name="LoopResult" type="TextEdit" parent="." unique_id=103362671]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Result"
+placeholder_text = "Result"
 wrap_mode = 1
 
 [connection signal="pressed" from="HBoxContainer2/StartLoop" to="." method="_on_start_loop_pressed"]
